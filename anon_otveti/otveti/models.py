@@ -1,15 +1,15 @@
+import library_cypher as cyp
 from django.db import models
 
 
 class Answers(models.Model):
-    name = models.CharField('Название товара', max_length=75)
-    desc = models.TextField('Описание товара')
-    price = models.IntegerField('Цена товара')
-    weight = models.IntegerField('Вес товара (граммы)')
-    category = models.CharField('Категория товара', max_length=95)
-    price_weight = models.BooleanField('Цена за вес?')
-    available = models.BooleanField('Товар в наличии?')
-    image = models.TextField('Ссылка на изображение')
+    name = models.CharField('Название теста', max_length=75)
+    subject = models.CharField('Предмет', max_length=20)
+    krypto = models.CharField('Криптоключ', max_length=300)
+    variants = models.IntegerField('Количество вариантов')
+    date = models.CharField('Дата', max_length=105)
+    author = models.CharField('Создатель', max_length=500)
+    contains = models.TextField('Содержание (ответы, вопросы...)')
 
     class Meta:
         verbose_name = "Ответ"
