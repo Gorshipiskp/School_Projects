@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div align="center">
+    <h1>Создать ответ</h1>
+    <form method='POST'>
+        {% csrf_token %}
+        {{ form.name }}<br>
+        {{ form.subject }}<br>
+        {{ form.variants }}<br>
+        {{ form.contains }}<br>
+        <button type="submit" class="btn btn-success">Подтвердить</button>
+    </form>
+</div>
+{% endblock %}
