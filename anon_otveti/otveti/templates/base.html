@@ -9,13 +9,18 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <title>{{ title }}</title>
     </head>
-    <body>
+    <body class="kletka" style="background: linear-gradient( #bbb, transparent 1px), linear-gradient( 90deg, #bbb, transparent 1px);
+	background-size: 30px 30px;
+	background-position: center;">
+
+
+
         <div class="container">
-            <header class="d-flex justify-content-center py-2">
+            <header class="d-flex justify-content-center py-3">
                 <ul class="nav nav-pills">
-                    <li class="nav-item"><a href="{% url 'main' %}" class='nav-link {% if title == "Ответы | Главная страница" %} active {% endif %}' aria-current="page">Главная</a></li>
-                    <li class="nav-item"><a href="{% url 'create' %}" class='nav-link {% if title == "Страница создания ответа" %} active {% endif %}'>Создать ответ</a></li>
-                    {% if ip_address in allowed_ips %}<li class="nav-item"><a href="{% url 'submits' %}" class='nav-link {% if title == "Подтверждение ответов" %} active {% endif %}'>Подтверждения ответов</a></li>{% endif %}
+                    <h5><li class="nav-item"><a href="{% url 'main' %}" class='nav-link {% if title == "Ответы | Главная страница" %} active {% endif %}' aria-current="page">Главная</a></li></h5>
+                    <h5><li class="nav-item"><a href="{% url 'create' %}" class='nav-link {% if title == "Страница создания ответа" %} active {% endif %}'>Создать ответ</a></li></h5>
+                    <h5>{% if ip_address in allowed_ips %}<li class="nav-item"><a href="{% url 'submits' %}" class='nav-link {% if title == "Подтверждение ответов" %} active {% endif %}'>Подтверждения ответов</a></li>{% endif %}</h5>
                 </ul>
             </header>
         </div>

@@ -2,4 +2,22 @@
 
 {% block body %}
 
+<div class="d-flex flex-wrap" style="margin-left:25px; margin-right:25px">
+    {% for i in anwers %}
+        {% if i.is_checked == False %}
+            <div align="center" class="container" style="margin:5px; padding:10px; border: solid; border-width: 3px; border-color: rgba(20,20,20,0.5); border-radius: 25px; background: rgba(210,210,210,0.2)">
+                <h1>{{ i.name }} (ID: {{ i.id }})</h1>
+                <h4>{{ i.subject }}</h4>
+                <br>
+                <h5>Создал - <input style="width:95%; height:35px" value="{{i.author}} ( (  {{ i.krypto }}  ) )"><br></h5><br>
+                <h5>Содержание - <textarea style="width:95%; height:405px">{{ i.contains }}</textarea><br></h5>
+                <form method="POST">
+                    {% csrf_token %}
+                    <button name="{{ i.id }}" type="submit" class="btn btn-success">Одобрить</button>
+                </form>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
 {% endblock %}

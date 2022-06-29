@@ -9,7 +9,8 @@ class Answers(models.Model):
     variants = models.IntegerField('Количество вариантов')
     date = models.CharField('Дата', max_length=105)
     author = models.CharField('Создатель', max_length=500)
-    contains = models.TextField('Содержание (ответы, вопросы...)')
+    contains = models.TextField('Содержание (ответы, вопросы...)', max_length=8500)
+    is_checked = models.BooleanField('Одобрен ли ответ?')
 
     class Meta:
         verbose_name = "Ответ"

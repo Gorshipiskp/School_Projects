@@ -2,4 +2,38 @@
 
 {% block body %}
 
+{% if answs %}
+    <div class="d-flex flex-wrap" style="margin-left:25px; margin-right:25px">
+        {% for i in answs %}
+            {% if i.is_checked == True %}
+                <div align="center" style="width:49% ;margin:5px; padding:10px; border: solid; border-width: 4px; border-color: rgba(10,10,10,0.55); border-radius: 25px; background: rgba(180,180,240,0.55)">
+                    <h1 align="left">{{ i.name }}</h1>
+                    <h3 align="left">{{ i.subject }}</h3>
+                    <h2>Ответы:</h2><h4><textarea style="width:95%; height:550px">{{ i.contains }}</textarea><br></h4> (ID: {{ i.id }})</h1>
+                    <br>
+                    <h6>Создал - <input style="width:85%; height:35px" value="{{i.author}}"><br></h6><br>
+                    <h6>Key - <input style="width:15%; height:35px" value="{{i.krypto}}"><br></h6><br>
+
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% else %}
+    <div class="container">
+        <h1 align="center">
+            <big>
+                <big>
+                    <big>
+                        <big>
+                            <big>
+                                Ответов пока вообще нет
+                            </big>
+                        </big>
+                    </big>
+                </big>
+            </big>
+        </h1>
+    </div>
+{% endif %}
+
 {% endblock %}

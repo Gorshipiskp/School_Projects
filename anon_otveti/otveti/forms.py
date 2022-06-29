@@ -7,7 +7,7 @@ class Answersform(ModelForm):
 
     class Meta:
         model = Answers
-        fields = ["name", "subject", "variants", "contains", "date", "author", "krypto"]
+        fields = ["name", "subject", "variants", "contains", "date", "author", "krypto", "is_checked"]
         widgets = {
             "name": TextInput(attrs={
                 'class': 'form-group',
