@@ -24,6 +24,12 @@ def main(request):
                                          "allowed_ips": allowed_ips})
 
 
+def submits(request):
+    return render(request, "submits.html", {"title": 'Подтверждение ответов',
+                                            "ip_address": get_client_ip(request),
+                                            "allowed_ips": allowed_ips})
+
+
 def create(request):
     if request.method == "POST":
         forms = request.POST.copy()

@@ -10,6 +10,21 @@
         <title>{{ title }}</title>
     </head>
     <body>
+        <div class="container">
+            <header class="d-flex justify-content-center py-2">
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a href="{% url 'main' %}" class='nav-link {% if title == "Ответы | Главная страница" %} active {% endif %}' aria-current="page">Главная</a></li>
+                    <li class="nav-item"><a href="{% url 'create' %}" class='nav-link {% if title == "Страница создания ответа" %} active {% endif %}'>Создать ответ</a></li>
+                    {% if ip_address in allowed_ips %}<li class="nav-item"><a href="{% url 'submits' %}" class='nav-link {% if title == "Подтверждение ответов" %} active {% endif %}'>Подтверждения ответов</a></li>{% endif %}
+                </ul>
+            </header>
+        </div>
+
+        <div style="width:100%;
+        border-top:4px solid rgb(100,100,255);
+        padding-left:10px">
+        </div>
+        <br>
 
         {% block body %}
 

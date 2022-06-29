@@ -1,15 +1,17 @@
 {% extends "base.html" %}
 
 {% block body %}
-<div align="center">
-    <h1>Создать ответ</h1>
-    <form method='POST'>
-        {% csrf_token %}
-        {{ form.name }}<br>
-        {{ form.subject }}<br>
-        {{ form.variants }}<br>
-        {{ form.contains }}<br>
-        <button type="submit" class="btn btn-success">Подтвердить</button>
-    </form>
-</div>
+<fieldset class="d-flex justify-content-center py-1">
+    <div align="center" style="width:45%; border:solid; border-color:rgb(100,100,255); border-radius:45px; border-width:6px">
+        <br><h1>Создать ответ</h1><br>
+        <form method='POST'>
+            {% csrf_token %}
+            {{ form.name }}<br>
+            {{ form.subject }}<br>
+            {{ form.variants }}<br><br>
+            {{ form.contains }}<br>
+            <big><button type="submit" class="btn btn-success">Отправить на рассмотрение</button></big><br><br>
+        </form>
+    </div>
+</fieldset>
 {% endblock %}
